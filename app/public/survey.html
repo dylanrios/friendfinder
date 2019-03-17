@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+<h1>Survey Questions</h1>
+
+<form>
+        <div class="form-group">
+          <label for="inputName">Name (Required)</label>
+          <input type="name" class="form-control" id="nameInput" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label for="photoLinkInput">Link to Photo Image (Required)</label>
+          <input type="text" class="form-control" id="photoLinkInput" placeholder="">
+        </div>
+      </form>
+
+<h4>Question 1</h4>
+<p>Your mind is always buzzing with unexplored ideas and plans.</p>
+      <select class="form-control" id="q1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+      <h4>Question 2</h4>
+      <p>Generally speaking, you rely more on your experience than your imagination.</p>
+            <select class="form-control" id="q2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            
+            <h4>Question 3</h4>
+<p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+      <select class="form-control" id="q3">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+      <h4>Question 4</h4>
+<p>You rarely do something just out of sheer curiosity.</p>
+      <select class="form-control" id="q4">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+      <h4>Question 5</h4>
+<p>People can rarely upset you.</p>
+      <select class="form-control" id="q5">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <h4>Question 6</h4>
+<p>It is often difficult for you to relate to other people’s feelings..</p>
+      <select class="form-control" id="q6">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <h4>Question 7</h4>
+<p>In a discussion, truth should be more important than people’s sensitivities.</p>
+      <select class="form-control" id="q7">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <h4>Question 8</h4>
+<p>You rarely get carried away by fantasies and ideas.</p>
+      <select class="form-control" id="q8">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <h4>Question 9</h4>
+<p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+      <select class="form-control" id="q9">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <h4>Question 10</h4>
+<p>You feel more energetic after spending time with a group of people.</p>
+      <select class="form-control" id="q10">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <br>
+      
+
+<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+     
+
+
+    </div>
+    <div id="results-modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Best Match</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p id="match-name"></p>
+                  <img id="match-img" src=""></img>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <style>
+
+
+      img {
+          width: 100%;
+          height: 100%;
+      }
+      body {
+          margin: 5%;
+          background-image: URL("https://images.pexels.com/photos/462030/pexels-photo-462030.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+          background-size: 100%;
+
+      }
+
+      .container {
+          color: white;
+      }
+
+      .form-control {
+          width: 200px;
+          margin-bottom: 20px;
+      }
+
+      
+      </style>
+
+
+
+
+
+    <script>
+
+
+
+$("#submitButton").on("click", function() {
+
+    event.preventDefault();
+
+
+    //captures the user's input
+
+        var q1_chosen = $("#q1").val();
+        var q2_chosen = $("#q2").val();
+        var q3_chosen = $("#q3").val();
+        var q4_chosen = $("#q4").val();
+        var q5_chosen = $("#q5").val();
+        var q6_chosen = $("#q6").val();
+        var q7_chosen = $("#q7").val();
+        var q8_chosen = $("#q8").val();
+        var q9_chosen = $("#q9").val();
+        var q10_chosen = $("#q10").val();
+
+
+var userData = {
+            name: $("#nameInput").val(),
+            photo: $("#photoLinkInput").val(),
+            scores: [
+                q1_chosen,
+                q2_chosen,
+                q3_chosen,
+                q4_chosen,
+                q5_chosen,
+                q6_chosen,
+                q7_chosen,
+                q8_chosen,
+                q9_chosen,
+                q10_chosen
+                ]
+        };
+        $.post("/api/friends", userData, function (data) {
+                
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
+
+                $("#results-modal").modal("toggle");
+
+        }
+        );
+    
+});
+
+        
+
+
+
+
+
+
+
+
+   
+
+
+        
+
+        </script>
+    
+</body>
+</html>
